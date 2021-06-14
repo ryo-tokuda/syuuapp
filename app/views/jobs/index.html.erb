@@ -1,0 +1,103 @@
+<header class= "top-page-header">
+<div class="search-bar-contents">
+  <%= link_to image_tag("syuuapp-logo.png", class: "syuuapp-logo"),"/" %>
+  <form class="search-form" action="#">
+      <input class='input-box' placeholder='キーワードから探す'>
+      <button class="search-button">
+        <%= image_tag "search.png", class:"search-icon" %>
+      </button>
+    </form>
+</div>
+<div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to '業界・職種を見る', industries_path, class: "industry-list" %></li>
+      
+    </ul>
+    <ul class='lists-right'>
+      <% if user_signed_in? %>
+       <li><%=link_to current_user.nickname, "#", class: "user-nickname" %></li> 
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login"%></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up"%></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+
+<div class="main">
+<div class='title-contents'>
+    <h2 class='service-title'>
+      ラクラク求人検索
+    </h2>
+    <p class='service-explain'>
+      気になる業界・職種を入力するだけであなたに合った求人が見つかる！
+    </p>
+    <p class='service-explain'>
+      就活アプリです
+    </p>
+  </div>
+  <%# FURIMAが選ばれる3つの理由部分 %>
+  <div class='select-reason-contents'>
+    <h2 class='title'>
+      就アプの3つの強み
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        <%= image_tag "top1.png", class:"list-pict" %>
+        <%# <span class='reason-list-number'>1</span> %>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>お手軽</span>
+          求人検索が可能
+        </h3>
+        <p class='reason-list-description'>
+          あなたが気になる求人が見つかる！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "top2.png", class:"list-pict" %> 
+        <%# <span class='reason-list-number'>2</span> %>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>企業研究</span>
+          がしやすい
+        </h3>
+        <p class='reason-list-description'>
+          業界・職種の理解を深めて、面接力UP！
+        </p>
+      </li>
+      <li class='list'>
+         <%= image_tag "top3.png", class:"list-pict" %> 
+        <%# <span class='reason-list-number'>3</span> %>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>面接</span>
+          の記録がとれる
+        </h3>
+        <p class='reason-list-description'>
+          面接を記録することでPDCAを回そう！
+        </p>
+      </li>
+    </ul>
+  </div>
+  <%# /就アプが選ばれる3つの理由部分 %>
+<div class="ad-contents"> 
+<%# <%= image_tag "dream-job.jpg", class:"dream-job" %> 
+  <h2 class='ad-title'>
+      会員数日本一位
+    </h2>
+    <p class='ad-explain'>
+      FURIMAは、フリマアプリで最も人気。
+    </p>
+    <p class='ad-explain'>
+      出品・購入回数も業界最多です！
+    </p>
+    <p class='ad-explain'>
+      ほしかったあの商品に出会えるかもしれません。
+    </p> 
+ </div>
+
+
+</div>
+
+
+
+
